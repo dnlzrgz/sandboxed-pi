@@ -29,7 +29,10 @@ USER pi
 ENV HOME=/home/pi \
     RUSTUP_HOME=/home/pi/.rustup \
     CARGO_HOME=/home/pi/.cargo \
-    PATH=/home/pi/.cargo/bin:${PATH}
+    PATH=/home/pi/.local/bin:/home/pi/.cargo/bin:${PATH}
+
+# Installs whatever is the latest stable CPython at build time.
+RUN uv python install --default
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
         | sh -s -- -y --profile minimal --default-toolchain ${RUST_TOOLCHAIN} \
