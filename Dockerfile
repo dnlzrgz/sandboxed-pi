@@ -3,7 +3,7 @@ FROM ghcr.io/astral-sh/uv:${UV_VERSION} AS uv
 FROM node:26.13.0-trixie-slim
 
 ARG RUST_TOOLCHAIN=stable
-ARG PI_VERSION=1.4.0
+ARG PI_VERSION=1.5.0
 ARG USER_UID=1000
 ARG USER_GID=1000
 
