@@ -3,13 +3,13 @@ FROM ghcr.io/astral-sh/uv:${UV_VERSION} AS uv
 FROM node:26.13.0-trixie-slim
 
 ARG RUST_TOOLCHAIN=stable
-ARG PI_VERSION=1.5.0
+ARG PI_VERSION=1.5.1
 ARG USER_UID=1000
 ARG USER_GID=1000
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        bash ca-certificates curl fd-find git jq \
+        bash ca-certificates curl fd-find gh git jq \
         less procps ripgrep unzip xz-utils \
         build-essential libssl-dev pkg-config \
     && ln -sf /usr/bin/fdfind /usr/local/bin/fd \

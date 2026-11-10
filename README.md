@@ -17,7 +17,7 @@ docker build -t pi-agent:local \
   --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g) .
 ```
 
-On top of the Debian base and Pi itself, the image installs Node, a minimal Rust toolchain (with `clippy`, `rustfmt` and `rust-analyzer`) and a current CPython via `uv`, all owned by the unprivileged `pi` user. The build args default to `1000:1000`; pass your own as above if `id -u` says something else, otherwise files the agent writes into your project will belong to a stranger on the host.
+On top of the Debian base and Pi itself, the image installs Node, the GitHub CLI (`gh`), a minimal Rust toolchain (with `clippy`, `rustfmt` and `rust-analyzer`) and a current CPython via `uv`, all owned by the unprivileged `pi` user. The build args default to `1000:1000`; pass your own as above if `id -u` says something else, otherwise files the agent writes into your project will belong to a stranger on the host.
 
 ## Run
 
